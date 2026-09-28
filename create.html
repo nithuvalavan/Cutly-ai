@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="CUTLY — Create an AI-powered video edit."
+    >
+
+    <title>Create Edit — CUTLY</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- ==============================
+         NAVIGATION
+    =============================== -->
+
+    <header class="top-nav">
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="CUTLY Home"
+        >
+
+            <span class="brand-mark">C</span>
+
+            <span class="brand-name">
+                CUTLY
+            </span>
+
+        </a>
+
+
+        <nav
+            class="desktop-nav"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+            <a
+                href="chat.html"
+                class="nav-link"
+            >
+                Chat
+            </a>
+
+            <a
+                href="create.html"
+                class="nav-link active"
+            >
+                Create
+            </a>
+
+            <a
+                href="#"
+                class="nav-link"
+            >
+                Projects
+            </a>
+
+            <a
+                href="#"
+                class="nav-link"
+            >
+                Settings
+            </a>
+
+        </nav>
+
+
+        <!-- Theme -->
+
+        <div class="theme-control">
+
+            <button
+                class="theme-button"
+                type="button"
+                aria-label="Change theme"
+                aria-expanded="false"
+            >
+
+                <span class="theme-current">
+                    System
+                </span>
+
+            </button>
+
+
+            <div
+                class="theme-menu"
+                hidden
+            >
+
+                <button
+                    type="button"
+                    data-theme="light"
+                >
+                    Light
+                </button>
+
+                <button
+                    type="button"
+                    data-theme="dark"
+                >
+                    Dark
+                </button>
+
+                <button
+                    type="button"
+                    data-theme="system"
+                >
+                    System
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         CREATE MAIN
+    =============================== -->
+
+    <main class="create-page">
+
+        <section class="create-container">
+
+
+            <!-- HEADER -->
+
+            <div class="create-header">
+
+                <p class="section-label">
+                    AI VIDEO EDITING
+                </p>
+
+                <h1>
+                    Create an Edit
+                </h1>
+
+                <p class="create-subtitle">
+                    Give CUTLY your footage.
+                    We'll find the story.
+                </p>
+
+            </div>
+
+
+            <!-- ==============================
+                 UPLOAD AREA
+            =============================== -->
+
+            <section
+                class="upload-section"
+                aria-label="Video upload"
+            >
+
+                <div class="upload-header">
+
+                    <div>
+
+                        <h2>
+                            Your Footage
+                        </h2>
+
+                        <p>
+                            Upload up to 4 video clips.
+                        </p>
+
+                    </div>
+
+                    <span class="clip-counter">
+                        0 / 4 clips
+                    </span>
+
+                </div>
+
+
+                <!-- Upload box -->
+
+                <label
+                    class="upload-box"
+                    for="video-upload"
+                >
+
+                    <input
+                        id="video-upload"
+                        type="file"
+                        accept="video/mp4,video/quicktime"
+                        multiple
+                        hidden
+                    >
+
+                    <div class="upload-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        Drop your footage here
+                    </h3>
+
+                    <p>
+                        MP4 or MOV · Up to 4 clips
+                    </p>
+
+                    <span class="upload-button">
+                        Choose videos
+                    </span>
+
+                </label>
+
+
+                <!-- Uploaded clips -->
+
+                <div
+                    class="clip-grid"
+                    id="clip-grid"
+                >
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 AI INSTRUCTION
+            =============================== -->
+
+            <section class="instruction-section">
+
+                <div class="instruction-header">
+
+                    <h2>
+                        Tell CUTLY how you want the edit
+                    </h2>
+
+                    <p>
+                        Type naturally in any language.
+                        CUTLY will understand.
+                    </p>
+
+                </div>
+
+
+                <div class="instruction-box">
+
+                    <label
+                        for="edit-instruction"
+                        class="sr-only"
+                    >
+                        Edit instruction
+                    </label>
+
+                    <textarea
+                        id="edit-instruction"
+                        rows="5"
+                        placeholder="Example: First shot semma hook ah irukanum, apram fast cuts venum..."
+                    ></textarea>
+
+
+                    <div class="instruction-actions">
+
+                        <span class="language-hint">
+                            English · Tamil · Tanglish · Hindi · more
+                        </span>
+
+                        <button
+                            type="button"
+                            class="instruction-mic"
+                            id="instruction-mic"
+                        >
+                            Mic
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================
+                 ANALYZE BUTTON
+            =============================== -->
+
+            <button
+                type="button"
+                class="analyze-button"
+                id="analyze-button"
+            >
+
+                <span>
+                    Analyze Footage
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+            <p class="create-note">
+                CUTLY will analyze your footage,
+                understand your instruction and build
+                an edit plan.
+            </p>
+
+        </section>
+
+    </main>
+<!-- ANALYSIS SCREEN -->
+<section class="analysis-screen" id="analysis-screen">
+
+    <div class="analysis-content">
+
+        <p class="analysis-label">CUTLY ANALYSIS</p>
+
+        <h2>Analyzing your footage</h2>
+
+        <p class="analysis-subtitle">
+            CUTLY is understanding your footage and building your edit.
+        </p>
+
+        <div class="analysis-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <span id="progress-percent">0%</span>
+        </div>
+
+        <div class="analysis-steps">
+
+            <div class="analysis-step" id="step-shots">
+                <span class="step-icon">○</span>
+                <span>Detecting shots</span>
+            </div>
+
+            <div class="analysis-step" id="step-moments">
+                <span class="step-icon">○</span>
+                <span>Finding key moments</span>
+            </div>
+
+            <div class="analysis-step" id="step-pacing">
+                <span class="step-icon">○</span>
+                <span>Checking pacing</span>
+            </div>
+
+            <div class="analysis-step" id="step-building">
+                <span class="step-icon">○</span>
+                <span>Building edit</span>
+            </div>
+
+        </div>
+
+        <div class="analysis-complete" id="analysis-complete">
+            <span>✓</span>
+            <div>
+                <strong>Let's do this.</strong>
+                <p>CUTLY has finished analyzing your clips.</p>
+            </div>
+        </div>
+
+        <button class="view-plan-button" id="view-plan-button">
+            <span>View Edit Plan</span>
+            <span>→</span>
+        </button>
+
+    </div>
+
+</section>
+<!-- EDIT PLAN SCREEN -->
+<section class="edit-plan-screen" id="edit-plan-screen">
+
+    <div class="edit-plan-content">
+
+        <p class="analysis-label">CUTLY EDIT PLAN</p>
+
+        <h2>Your Edit</h2>
+
+        <p class="analysis-subtitle">
+            CUTLY has shaped your footage into a story.
+        </p>
+
+        <div class="edit-meta">
+            <span>12.8 sec</span>
+            <span>Cinematic</span>
+            <span>Fast paced</span>
+        </div>
+
+        <div class="shot-list">
+
+            <div class="shot-card">
+                <span class="shot-number">01</span>
+                <div>
+                    <strong>HOOK</strong>
+                    <p>Start with the strongest opening moment.</p>
+                </div>
+                <span class="shot-time">00:00 – 00:03</span>
+            </div>
+
+            <div class="shot-card">
+                <span class="shot-number">02</span>
+                <div>
+                    <strong>ACTION</strong>
+                    <p>Move quickly into the main action.</p>
+                </div>
+                <span class="shot-time">00:03 – 00:07</span>
+            </div>
+
+            <div class="shot-card">
+                <span class="shot-number">03</span>
+                <div>
+                    <strong>REACTION</strong>
+                    <p>Use the reaction to give the sequence emotion.</p>
+                </div>
+                <span class="shot-time">00:07 – 00:10</span>
+            </div>
+
+            <div class="shot-card">
+                <span class="shot-number">04</span>
+                <div>
+                    <strong>ENDING</strong>
+                    <p>Finish on a clean memorable frame.</p>
+                </div>
+                <span class="shot-time">00:10 – 00:12.8</span>
+            </div>
+
+        </div>
+
+        <div class="edit-plan-actions">
+            <button class="adjust-button" id="adjust-edit-button">
+                Adjust
+            </button>
+
+            <button class="create-edit-button" id="create-edit-button">
+                Create Edit →
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ==============================
+         MOBILE NAV
+    =============================== -->
+
+    <nav
+        class="mobile-nav"
+        aria-label="Mobile navigation"
+    >
+
+        <a
+            href="index.html"
+            class="mobile-nav-item"
+        >
+            Home
+        </a>
+
+        <a
+            href="chat.html"
+            class="mobile-nav-item"
+        >
+            Chat
+        </a>
+
+        <a
+            href="create.html"
+            class="mobile-nav-item active create-item"
+        >
+            Create
+        </a>
+
+        <a
+            href="#"
+            class="mobile-nav-item"
+        >
+            Projects
+        </a>
+
+        <a
+            href="#"
+            class="mobile-nav-item"
+        >
+            Settings
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CUTLY AI Creative Assistant"
+    >
+
+    <title>Chat — CUTLY</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <!-- ==============================
+             TOP NAVIGATION
+        =============================== -->
+
+        <header class="top-nav">
+
+            <a href="index.html" class="brand" aria-label="CUTLY Home">
+                <span class="brand-mark">C</span>
+                <span class="brand-name">CUTLY</span>
+            </a>
+
+            <nav class="desktop-nav" aria-label="Main navigation">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="chat.html" class="nav-link active">
+                    Chat
+                </a>
+
+                <a href="#" class="nav-link">
+                    Create
+                </a>
+
+                <a href="#" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="#" class="nav-link">
+                    Settings
+                </a>
+
+            </nav>
+
+            <!-- Theme -->
+
+            <div class="theme-control">
+
+                <button
+                    class="theme-button"
+                    type="button"
+                    aria-label="Change theme"
+                    aria-expanded="false"
+                >
+                    <span class="theme-current">
+                        System
+                    </span>
+                </button>
+
+                <div class="theme-menu" hidden>
+
+                    <button type="button" data-theme="light">
+                        Light
+                    </button>
+
+                    <button type="button" data-theme="dark">
+                        Dark
+                    </button>
+
+                    <button type="button" data-theme="system">
+                        System
+                    </button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==============================
+             CHAT MAIN
+        =============================== -->
+
+        <main class="chat-page">
+
+            <section class="chat-container">
+
+                <!-- Chat Header -->
+
+                <div class="chat-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            CUTLY AI
+                        </p>
+
+                        <h1>
+                            Creative Assistant
+                        </h1>
+
+                        <p class="chat-subtitle">
+                            Ask about filmmaking, editing,
+                            storytelling or your footage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==============================
+                     CONVERSATION
+                =============================== -->
+
+                <div
+                    class="chat-messages"
+                    id="chat-messages"
+                    aria-live="polite"
+                >
+
+                    <!-- AI Welcome -->
+
+                    <div class="message ai-message">
+
+                        <div class="message-avatar">
+                            C
+                        </div>
+
+                        <div class="message-content">
+
+                            <p>
+                                Hey. I'm CUTLY.
+                            </p>
+
+                            <p>
+                                Tell me what you're creating,
+                                and I'll help you shape the idea,
+                                shots, script or edit.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Example User Message -->
+
+                    <div class="message user-message">
+
+                        <div class="message-content">
+
+                            <p>
+                                I want to make a cinematic
+                                30-second reel.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Example AI Response -->
+
+                    <div class="message ai-message">
+
+                        <div class="message-avatar">
+                            C
+                        </div>
+
+                        <div class="message-content">
+
+                            <p>
+                                Start with a strong visual hook
+                                in the first 1–2 seconds.
+                            </p>
+
+                            <p>
+                                Then build the rhythm around
+                                movement, reaction and a clean ending.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==============================
+                     CHAT INPUT
+                =============================== -->
+
+                <div class="chat-input-area">
+
+                    <label
+                        for="chat-input"
+                        class="sr-only"
+                    >
+                        Message CUTLY
+                    </label>
+
+                    <textarea
+                        id="chat-input"
+                        class="chat-input"
+                        rows="1"
+                        placeholder="Tell CUTLY what you're creating..."
+                    ></textarea>
+
+
+                    <div class="chat-input-actions">
+
+                        <button
+                            type="button"
+                            class="chat-voice-button"
+                            aria-label="Use voice input"
+                        >
+                            Mic
+                        </button>
+
+                        <button
+                            type="button"
+                            class="chat-send-button"
+                            aria-label="Send message"
+                        >
+                            Send
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI capability hint -->
+
+                <p class="chat-hint">
+                    Type naturally in English, Tamil,
+                    Tanglish or other supported languages.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- ==============================
+             MOBILE NAVIGATION
+        =============================== -->
+
+        <nav
+            class="mobile-nav"
+            aria-label="Mobile navigation"
+        >
+
+            <a
+                href="index.html"
+                class="mobile-nav-item"
+            >
+                Home
+            </a>
+
+            <a
+                href="chat.html"
+                class="mobile-nav-item active"
+            >
+                Chat
+            </a>
+
+            <a
+                href="#"
+                class="mobile-nav-item create-item"
+            >
+                Create
+            </a>
+
+            <a
+                href="#"
+                class="mobile-nav-item"
+            >
+                Projects
+            </a>
+
+            <a
+                href="#"
+                class="mobile-nav-item"
+            >
+                Settings
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
